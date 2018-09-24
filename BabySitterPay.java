@@ -10,12 +10,9 @@ public class BabySitterPay {
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		BabySitterCalc calc = new BabySitterCalc();
+		BabySitterUI ui = new BabySitterUI(calc);
+		ui.printresults();
 		
-		BabySitterUI ui = new BabySitterUI();
-		
-		
-	}
-	
-	
-	
+	}	
 }

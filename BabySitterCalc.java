@@ -1,8 +1,6 @@
 
 public class BabySitterCalc {
 	
-	
-	
 	private int starttime;
 	private int stoptime;
 	private int bedtime;
@@ -11,6 +9,11 @@ public class BabySitterCalc {
 	private int beforemidnighthours;
 	private int aftermidnighthours;
 	
+	private double beforebedrate=12.00;
+	private double beforemidnightrate=8.00;
+	private double aftermidnightrate=16.00;
+	
+	private double beforebedpay, beforemidnightpay, aftermidnightpay;
 	
 	public BabySitterCalc() {
 		
@@ -50,7 +53,9 @@ public class BabySitterCalc {
 			setBeforemidnighthours(24-bedtime);
 			setAftermidnighthours(stoptime);
 		}
-		
+		beforebedpay=getBeforebedhours()*beforebedrate;
+		beforemidnightpay=getBeforemidnighthours()*beforemidnightrate;
+		aftermidnightpay=getAftermidnighthours()*aftermidnightrate;
 	}
 
 	/**
@@ -89,7 +94,26 @@ public class BabySitterCalc {
 	public int getBeforebedhours() {
 		return beforebedhours;
 	}
+	/**
+	 * @return
+	 */
+	public double getBeforebedpay() {
+		return beforebedpay;
+	}
 	
+	/**
+	 * @return
+	 */
+	public double getBeforemidnightpay() {
+		return beforemidnightpay;
+	}
+	
+	/**
+	 * @return
+	 */
+	public double getAftermidnightpay() {
+		return aftermidnightpay;
+	}
 	/**
 	 * @param starttime - sets the start time
 	 */
@@ -126,5 +150,22 @@ public class BabySitterCalc {
 	public void setBeforebedhours(int beforebedhours) {
 		this.beforebedhours = beforebedhours;
 	}
-
+	/**
+	 * @param beforebedpay
+	 */
+	public void setBeforebedpay(double beforebedpay) {
+		this.beforebedpay = beforebedpay;
+	}
+	/**
+	 * @param beforemidnightpay
+	 */
+	public void setBeforemidnightpay(double beforemidnightpay) {
+		this.beforemidnightpay = beforemidnightpay;
+	}
+	/**
+	 * @param aftermidnightpay
+	 */
+	public void setAftermidnightpay(double aftermidnightpay) {
+		this.aftermidnightpay = aftermidnightpay;
+	}
 }
