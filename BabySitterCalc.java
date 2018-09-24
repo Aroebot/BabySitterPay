@@ -1,6 +1,8 @@
 
 public class BabySitterCalc {
-
+	
+	
+	
 	private int starttime;
 	private int stoptime;
 	private int bedtime;
@@ -9,6 +11,10 @@ public class BabySitterCalc {
 	private int beforemidnighthours;
 	private int aftermidnighthours;
 	
+	
+	public BabySitterCalc() {
+		
+	}
 	/**
 	 * Constructor method to set the start, stop and bed time.
 	 * @param start - the start time hour

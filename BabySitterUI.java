@@ -6,13 +6,23 @@ public class BabySitterUI {
 	private int stoptime;
 	private int bedtime;
 	
+	private double beforebedrate=12.00;
+	private double beforemidnightrate=8.00;
+	private double aftermidnightrate=16.00;
+	
+	BabySitterCalc calc;
+	
 	/**
 	 * Generic constructor class to build the UI.
 	 */
 	public BabySitterUI() {
-		
-	}
+		gettimes();
+		 calc = new BabySitterCalc(getStarttime(), getStoptime(), getBedtime());
+		 calc.calculatetimes();
+		 printresults();
 	
+	}
+
 	/**
 	 * The UI to get the startime, stoptime and bedtime hour as an integer. 
 	 * If the string is invalid, it will re-ask for a valid time. 
@@ -77,6 +87,22 @@ public class BabySitterUI {
 		}
 		
 		gettime.close();//closes the scanner
+		
+	}
+	/**
+	 * This method will make the final calculation of pay and display
+	 */
+	public void printresults() {
+		double beforebed, beforemidnight, aftermidnight;
+		
+		beforebed=calc.getBeforebedhours()*beforebedrate;
+		beforemidnight=calc.getBeforemidnighthours()*beforemidnightrate;
+		aftermidnight=calc.getAftermidnighthours()*aftermidnightrate;
+		
+		System.out.println("Before Bed: " + beforebed +" : "+ calc.getBeforebedhours() + " hours worked");
+		System.out.println("After Bed: " + beforemidnight +" : "+ calc.getBeforemidnighthours() + " hours worked");
+		System.out.println("After midnight: " + aftermidnight+" : "+ calc.getAftermidnighthours() + " hours worked");
+		System.out.println("Total Pay: $" + (beforebed + beforemidnight + aftermidnight));
 		
 	}
 	
