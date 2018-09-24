@@ -3,7 +3,7 @@ Baby Sitter Pay calculator kata
 
 To run program:
 save BabySitterPayCalculator.jar file to local computer.
-at a commandline prompt, navigate to location of the .jar file.
+at a command line prompt, navigate to location of the .jar file.
 once at the location, type in the following command.
 
 java -jar babysitterpaycalculator.jar
